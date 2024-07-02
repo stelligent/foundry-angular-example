@@ -11,6 +11,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     /usr/local/var/log/nginx/error.log
     /usr/local/var/log/nginx/access.log
 
+    sudo ng serve --port 80 --host 0.0.0.0
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

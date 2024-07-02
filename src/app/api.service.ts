@@ -7,7 +7,8 @@ import { Note } from './notes/notes.component'; // Ensure the correct path
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:5001/api/notes'; // Replace with your API URL
+  private baseUrl = window.location.origin;
+  private apiUrl = `${this.baseUrl}/api/notes`;
 
   constructor(private http: HttpClient) {}
 
