@@ -15,8 +15,8 @@ source "amazon-ebs" "east-builder" {
   instance_type = "t2.xlarge"
   ssh_username = "ec2-user"
   ami_name      = "Angular${formatdate("YYMMDDHHMMss", timestamp())}"
-  vpc_id      = "vpc-090e2e0c480a24b6a"
-  subnet_id = "subnet-0d523d4efc7cd1515"
+  vpc_id      = "vpc-02bb5a1658e5dd7b4"
+  subnet_id = "subnet-0234aec3b321af077"
 }
 
 build {
