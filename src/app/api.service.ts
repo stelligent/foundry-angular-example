@@ -7,7 +7,7 @@ import { Note } from './notes/notes.component'; // Ensure the correct path
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:5001/notes'; // Replace with your API URL
+  private apiUrl = 'http://localhost:5001/api/notes'; // Replace with your API URL
 
   constructor(private http: HttpClient) {}
 
