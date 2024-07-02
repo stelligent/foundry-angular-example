@@ -41,8 +41,8 @@ build {
       "sudo rm -rf /usr/share/nginx/html/*",
       "sudo cp -r /opt/app/dist/foundry-angular-example/* /usr/share/nginx/html/",
       "sudo cp /opt/app/nginx/nginx.conf /etc/nginx/nginx.conf",
-      "sudo cp /opt/app/nginx/sites-available/* /etc/nginx/conf.d/",
-      "sudo cp ./nginx/sites-available/local /etc/nginx/servers/angular.conf"
+      "sudo mkdir /etc/nginx/servers",
+      "sudo cp /opt/app/nginx/sites-available/aws /etc/nginx/servers/angular.conf",
       "sudo systemctl enable nginx",
       "sudo systemctl start nginx"
     ]

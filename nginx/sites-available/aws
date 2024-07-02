@@ -1,18 +1,18 @@
 server {
-    listen 80;  # Listen on port 80 for HTTP connections.
-    server_name example.com;  # The domain name.
+    listen 80;
+    server_name localhost;
 
     # Root directory and index files.
-    root /usr/share/nginx/html;
-    index index.html index.htm;
+    root /opt/app/dist/foundry-angular-example/browser;
+    index index.html;
 
     # Location blocks handle requests for different resources.
     location / {
-        try_files $uri $uri/ =404;  # Serve static files or return a 404 error.
+        try_files $uri $uri/ /index.html;
     }
 
     location /api/ {
-        proxy_pass http://backend-server-ip:port;
+        proxy_pass http://10.192.20.146:5001;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
