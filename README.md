@@ -2,11 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
 
-## NGINX
+## NGINX on Mac
 
     sudo cp ./nginx/sites-available/local /usr/local/etc/nginx/servers/angular.conf
     sudo nginx -t
     sudo nginx -s reload
+
+    /usr/local/var/log/nginx/error.log
+    /usr/local/var/log/nginx/access.log
 
 ## Development server
 

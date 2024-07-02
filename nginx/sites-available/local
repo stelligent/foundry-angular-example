@@ -1,14 +1,14 @@
 server {
-    listen 4200;  # Listen on port 80 for HTTP connections.
-    server_name localhost;  # The domain name.
+    listen 80;
+    server_name localhost;
 
     # Root directory and index files.
-    root /usr/share/nginx/html;
-    index index.html index.htm;
+    root /Users/richardwolf/Desktop/foundry-angular-example/dist/foundry-angular-example/browser;
+    index index.html;
 
     # Location blocks handle requests for different resources.
     location / {
-        try_files $uri $uri/ =404;  # Serve static files or return a 404 error.
+        try_files $uri $uri/ /index.html;
     }
 
     location /api/ {
