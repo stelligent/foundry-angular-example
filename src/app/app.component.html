@@ -1,23 +1,25 @@
-<h1>Angular Router Sample</h1>
+<!-- app.component.html or your component's template -->
 
-<nav>
+<mat-toolbar color="primary">
   <a
-    class="button"
+    mat-button
     routerLink="/notes"
-    routerLinkActive="activebutton"
-    ariaCurrentWhenActive="page"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
   >
     Notes
   </a>
-  |
   <a
-    class="button"
+    mat-button
     routerLink="/test"
-    routerLinkActive="activebutton"
-    ariaCurrentWhenActive="page"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
   >
     Test
   </a>
-</nav>
+</mat-toolbar>
 
-<router-outlet />
+<!-- Wrapper div for styling purposes -->
+<div class="content-wrapper">
+  <router-outlet></router-outlet>
+</div>

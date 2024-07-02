@@ -1,11 +1,33 @@
-<h3>Notes</h3>
-<ul>
-  <li *ngFor="let note of notes">
-    {{ note.content }}
-    <button (click)="deleteNote(note.id)">Delete</button>
-    <button (click)="prepareUpdate(note)">Update to 'Updated Note'</button>
-  </li>
-</ul>
+<!-- Main Application Title -->
+<h1>Notes Application</h1>
 
-<input type="text" [(ngModel)]="newNoteContent" />
-<button (click)="addNote()">Add Note</button>
+<!-- Add Notes Section -->
+
+<div style="display: flex; align-items: center">
+  <mat-form-field appearance="fill" style="flex: 1">
+    <mat-label>Add new note</mat-label>
+    <input matInput [(ngModel)]="newNoteContent" />
+  </mat-form-field>
+  <button mat-flat-button (click)="addNote()" style="margin: 8px">
+    Add Note
+  </button>
+</div>
+
+<!-- Notes List -->
+<div *ngFor="let note of notes" style="margin-bottom: 20px">
+  <mat-card>
+    <mat-card-content
+      style="display: flex; justify-content: space-between; align-items: center"
+    >
+      <span>{{ note.content }}</span>
+      <div>
+        <button mat-button color="warn" (click)="deleteNote(note.id)">
+          Delete
+        </button>
+        <button mat-button color="primary" (click)="prepareUpdate(note)">
+          Update
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

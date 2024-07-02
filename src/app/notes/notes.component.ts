@@ -3,6 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { NgFor } from '@angular/common';
 import { ApiService } from '../api.service';
 
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
+
 export interface Note {
   id: number;
   content: string;
@@ -13,7 +19,15 @@ export interface Note {
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.css'],
   standalone: true,
-  imports: [NgFor, FormsModule], // Include FormsModule here
+  imports: [
+    NgFor,
+    FormsModule,
+    MatListModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatCardModule,
+  ],
 })
 export class NotesComponent implements OnInit {
   notes: Note[] = [];

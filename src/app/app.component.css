@@ -1,0 +1,29 @@
+.mat-toolbar {
+  background-color: #007fff; /* Replace with your desired color */
+}
+
+.mat-toolbar a {
+  color: #ffffff; /* Ensures the text color is white or another light color for contrast */
+  margin-right: 20px; /* Adds space between the links */
+  text-transform: uppercase; /* Optional: transforms text to uppercase */
+  font-size: 16px; /* Adjust font size as needed */
+  text-decoration: none; /* Removes underline from the links */
+}
+
+.mat-toolbar a:hover {
+  color: black; /* Adds a hover effect with a different color */
+}
+
+.mat-toolbar {
+  padding: 10px 20px; /* Adds 10px padding vertically and 20px horizontally */
+}
+
+/* styles.css or your component's css file */
+.active {
+  font-weight: bold;
+  color: #ffffff; /* Adjust the color based on your theme */
+}
+
+.content-wrapper {
+  padding: 20px; /* Adjust the padding as needed */
+}

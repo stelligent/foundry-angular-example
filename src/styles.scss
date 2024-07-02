@@ -1,0 +1,40 @@
+@import "~@angular/material/theming";
+
+// Define a custom Material palette for Azure Blue
+$azure-blue: (
+  50: #e0f7fa,
+  100: #b3ebf5,
+  200: #80dee0,
+  300: #4dd0eb,
+  400: #26c6da,
+  500: #007fff,
+  // Primary shade of Azure Blue
+  600: #0091ea,
+  700: #0288d1,
+  800: #0277bd,
+  900: #01579b,
+  A100: #80d8ff,
+  A200: #40c4ff,
+  A400: #00b0ff,
+  A700: #0091ea,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: white,
+    // Ensuring good contrast for accessibility
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: black,
+    A200: black,
+    A400: white,
+    A700: white,
+  ),
+);
+
+// Generate a color palette map
+$primary-palette: mat-palette($azure-blue);
