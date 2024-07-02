@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { NgFor } from '@angular/common';
 import { ApiService } from '../api.service';
 
 export interface Note {
@@ -8,13 +10,14 @@ export interface Note {
 
 @Component({
   selector: 'app-notes',
-  standalone: true,
-  imports: [],
   templateUrl: './notes.component.html',
-  styleUrl: './notes.component.css',
+  styleUrls: ['./notes.component.css'],
+  standalone: true,
+  imports: [NgFor, FormsModule], // Include FormsModule here
 })
 export class NotesComponent implements OnInit {
-  notes: Note[] = []; // Specify that 'notes' is an array of 'Note'
+  notes: Note[] = [];
+  newNoteContent: string = '';
 
   constructor(private apiService: ApiService) {}
 
@@ -24,25 +27,26 @@ export class NotesComponent implements OnInit {
 
   fetchNotes(): void {
     this.apiService.getNotes().subscribe((data: Note[]) => {
-      // Specify that 'data' is an array of 'Note'
       this.notes = data;
     });
   }
 
   addNote(): void {
-    const newNote = { content: 'New Note' }; // Ensure this matches the 'Note' interface
+    const newNote = { content: this.newNoteContent };
     this.apiService.addNote(newNote).subscribe(() => {
       this.fetchNotes();
     });
   }
 
+  prepareUpdate(note: Note): void {
+    const updatedNote = { ...note, content: 'Updated Note' };
+    this.updateNote(updatedNote);
+  }
+
   updateNote(note: Note): void {
-    // Use 'Note' interface for type safety
-    this.apiService
-      .updateNote(note.id, { content: 'Updated Note' })
-      .subscribe(() => {
-        this.fetchNotes();
-      });
+    this.apiService.updateNote(note.id, note).subscribe(() => {
+      this.fetchNotes();
+    });
   }
 
   deleteNote(id: number): void {

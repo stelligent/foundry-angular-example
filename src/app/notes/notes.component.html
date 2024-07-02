@@ -1,2 +1,11 @@
 <h3>Notes</h3>
-<p>notes works!</p>
+<ul>
+  <li *ngFor="let note of notes">
+    {{ note.content }}
+    <button (click)="deleteNote(note.id)">Delete</button>
+    <button (click)="prepareUpdate(note)">Update to 'Updated Note'</button>
+  </li>
+</ul>
+
+<input type="text" [(ngModel)]="newNoteContent" />
+<button (click)="addNote()">Add Note</button>
